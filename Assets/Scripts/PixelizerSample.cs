@@ -22,7 +22,7 @@ public class PixelizerSample : MonoBehaviour {
 
         tex = inputRT.CreateTexture2D();
 
-        tex = Pixelizer.Palettize(tex, cp.Colors, ColorCalc.RgbEucSqrDistance);
+        tex = Pixelizer.Palettize(tex, cp.Colors, ColorCalc.RgbEucSqrDistPerceptive);
         tex = Pixelizer.Pixelize(tex, blockSize, cp.WeightTable, (pb, dict) => PixelBlock.ColorDominant(pb, dict));
 
         targetImageViewer.texture = tex;
@@ -35,9 +35,9 @@ public class PixelizerSample : MonoBehaviour {
 
         tex = inputRT.CreateTexture2D();
 
-        tex = Pixelizer.Palettize(tex, cp.Colors, ColorCalc.RgbEucSqrDistance);
+        tex = Pixelizer.Palettize(tex, cp.Colors, ColorCalc.RgbEucSqrDistPerceptive);
         tex = Pixelizer.Pixelize(tex, blockSize, cp.WeightTable, (pb, dict) => PixelBlock.ColorAverage(pb, dict));
-        tex = Pixelizer.Palettize(tex, cp.Colors, ColorCalc.RgbEucSqrDistance);
+        tex = Pixelizer.Palettize(tex, cp.Colors, ColorCalc.RgbEucSqrDistPerceptive);
 
         targetImageViewer.texture = tex;
     }
