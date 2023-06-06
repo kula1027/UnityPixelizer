@@ -71,7 +71,5 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
-#유니티 내에서 테스트 및 임시 작업 공간
-/Assets/TestAssets
-/Assets/TestAssets.meta
-/pixelized
+/Assets/IgnoreAssets
+/Assets/IgnoreAssets.meta
