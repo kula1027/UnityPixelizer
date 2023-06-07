@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputRtColor: {fileID: 8400000, guid: 09b98cfc93af3bb47ac74bd8dbae3213, type: 2}
   inputRtNormal: {fileID: 8400000, guid: 911411a089af0ec42b193a7994939b55, type: 2}
-  inputSize: {x: 384, y: 256}
-  blockSize: 8
-  alphaCut: 100
-  savePath: C:/Develop/UnityPixelizer/pixelized
+  inputSize: {x: 2048, y: 2048}
+  blockSize: 16
+  alphaCut: 150
+  savePath: C:/Users/kula/Desktop/fox
   fileNameColor: color_
   fileNameNormal: normal_
-  fileNum: 25
-  genAll_targetPath: C:/Develop/very-entertaining-platformer/very-entertaining-platformer/Assets/ArtRes/Icons/500_skillicons/Skill_standart
-  genAll_savePath: C:/Users/kula/Desktop/28
+  fileNum: 49
+  genAll_targetPath: C:/Develop/UnityPixelizer/Assets/IgnoreAssets/Icons/500_skill_icons2/Skill_standart
+  genAll_savePath: C:/Users/kula/Desktop/fox

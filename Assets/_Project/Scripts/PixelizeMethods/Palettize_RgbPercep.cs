@@ -4,6 +4,7 @@ using UnityEngine;
 namespace Pixelizer {
     public class Palettize_RgbPercep : PixelizerMethod {
         [SerializeField] private ColorPalette cp;
+
         public override void OnGUI() {
             cp = EditorGUILayout.ObjectField("Color Palette", cp, typeof(ColorPalette), true) as ColorPalette;
 

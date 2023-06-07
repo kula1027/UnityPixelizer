@@ -10,7 +10,7 @@ namespace Pixelizer {
         public static Texture2D Palettize(
             Texture2D srcTex,
             Color32[] paletteColors,
-            Func<Color32, Color32, float> fncColorCompare,
+            Func<Color32, Color32, float> colorCompare,
             int alphaCut = Default_AlphaCut) {
 
             Color32[] srcPixels = srcTex.GetPixels32();
@@ -27,7 +27,7 @@ namespace Pixelizer {
                 Color32 closeColor = default;
 
                 for (int loop2 = 0; loop2 < paletteColors.Length; loop2++) {
-                    float d = fncColorCompare(pixel, paletteColors[loop2]);
+                    float d = colorCompare(pixel, paletteColors[loop2]);
                     if (d < closestDistance) {
                         closestDistance = d;
                         closeColor = paletteColors[loop2];
@@ -35,6 +35,30 @@ namespace Pixelizer {
                 }
 
                 srcPixels[loop] = closeColor;
+            }
+
+            srcTex.name = "PalettizedOutput";
+
+            srcTex.SetPixels32(srcPixels);
+            srcTex.Apply(false);
+
+            return srcTex;
+        }
+
+        public static Texture2D Palettize(
+            Texture2D srcTex,
+            Func<Color32, Color32> forEachPixel,
+            int alphaCut = Default_AlphaCut) {
+
+            Color32[] srcPixels = srcTex.GetPixels32();
+
+            for (int loop = 0; loop < srcPixels.Length; loop++) {
+                if (srcPixels[loop].a < alphaCut) {
+                    srcPixels[loop] = new Color32(0, 0, 0, 0);
+                    continue;
+                }
+
+                srcPixels[loop] = forEachPixel(srcPixels[loop]);
             }
 
             srcTex.name = "PalettizedOutput";

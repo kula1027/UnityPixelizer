@@ -25,6 +25,7 @@ namespace Pixelizer {
 
         private PixelizerMethod[] normalMethods = {
             new Pixelize_RgbAvg(),
+            new Palettize_Sectionize()
         };
 
         private List<PixelizerMethod> selectedColorMethods = new List<PixelizerMethod>();
